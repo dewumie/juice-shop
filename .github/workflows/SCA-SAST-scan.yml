@@ -1,10 +1,7 @@
 name: Build code, run unit test, run SAST, SCA, DAST security scans
 on: push
 
-    branches:
-      - master
-  pull_request:
-      types: [opened, synchronize, reopened]
+  
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
