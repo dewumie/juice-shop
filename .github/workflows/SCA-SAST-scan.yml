@@ -1,4 +1,4 @@
-name: Build code, run unit test, run SAST, SCA, DAST security scans for Javascript App
+name: Build code, run unit test, run SAST, SCA, DAST security scans for NodeJs App
 on: push
 
 jobs:
@@ -21,7 +21,8 @@ jobs:
         args: >
           -Dsonar.organization=juiceshoporg
           -Dsonar.projectKey=juiceshoporg
-           security:
+  security:
+    runs-on: ubuntu-latest
     needs: build
     name: Run the SCA scan on the source code
     steps:
