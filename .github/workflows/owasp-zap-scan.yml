@@ -1,8 +1,11 @@
+name: Run zap scan
+
+on: push
+ jobs:
  zap_scan:
     runs-on: ubuntu-latest
-    needs: security
-    name: Run DAST scan on the web application
-    steps:
+     name: Run DAST scan on the web application
+     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -11,6 +14,6 @@
         uses: zaproxy/action-baseline@v0.6.1
         with:
           docker_name: 'owasp/zap2docker-stable'
-          target: 'http://testphp.vulnweb.com/'
+          target: http://52.3.250.212:3000/#/
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
