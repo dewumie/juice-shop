@@ -2,8 +2,9 @@ name: Build code, run unit test, run SAST, SCA, DAST security scans for Javascri
 on: push
    
 jobs:
-  sonarcloud:
+  build:
     runs-on: ubuntu-latest
+    name: Run unit tests and SAST scan on source code
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v3
